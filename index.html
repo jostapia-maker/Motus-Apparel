@@ -48,13 +48,59 @@ input{font:inherit;padding:10px;border:1px solid var(--line);background:var(--ca
 @media (max-width:560px){.tier{grid-template-columns:1fr}}
 footer{text-align:center;padding:40px 20px;color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
 footer a{margin:0 8px}
+#fit-lab .fit-intro{max-width:580px;line-height:1.6;margin-top:0}
+#fit-lab .fit-tag{display:block;font-size:11px;font-weight:800;letter-spacing:.2em;color:var(--mut);margin-bottom:10px}
+#fit-lab .fit-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:20px;align-items:start}
+#fit-lab .fit-panel{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
+#fit-lab h3{font-size:14px;letter-spacing:.08em;margin:0 0 16px}
+#fit-lab .fit-board{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:12px;margin:16px 0}
+#fit-lab .fit-slot{background:var(--bg);border:1px dashed var(--line);border-radius:6px;padding:12px;min-width:0;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#fit-lab .fit-slot[data-slot="top"]{grid-column:1;grid-row:1}
+#fit-lab .fit-slot[data-slot="bottom"]{grid-column:1;grid-row:2}
+#fit-lab .fit-slot[data-slot="layer"]{grid-column:2;grid-row:1 / 3}
+#fit-lab .fit-slot img{display:block;width:100%;height:130px;object-fit:contain;margin:8px 0}
+#fit-lab .fit-slot[data-slot="bottom"] img{height:175px}
+#fit-lab .fit-slot[data-slot="layer"] img{height:200px}
+#fit-lab .fit-slot small{color:var(--mut);font-size:10px;font-weight:700;letter-spacing:.12em}
+#fit-lab .fit-placeholder{display:grid;place-items:center;min-height:130px;color:var(--mut);font-size:12px;line-height:1.5}
+#fit-lab .fit-name{font-size:11px;line-height:1.4;overflow-wrap:anywhere}
+#fit-lab .fit-remove{border:0;background:transparent;color:var(--mut);font-size:11px;text-decoration:underline;padding:8px}
+#fit-lab .fit-actions{display:flex;gap:8px;flex-wrap:wrap}
+#fit-lab .fit-actions button{letter-spacing:.04em;font-size:11px;min-height:42px}
+#fit-lab .fit-secondary{border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+#fit-lab .fit-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}
+#fit-lab .fit-tabs [aria-pressed="true"]{background:var(--acc);color:var(--accfg);border-color:var(--acc)}
+#fit-lab .fit-products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+#fit-lab .fit-product{display:flex;flex-direction:column;text-align:left;border:1px solid var(--line);border-radius:6px;padding:10px;background:var(--bg);color:var(--fg);min-width:0}
+#fit-lab .fit-product[aria-pressed="true"]{border-color:var(--fg);box-shadow:inset 0 0 0 1px var(--fg)}
+#fit-lab .fit-product img{width:100%;height:110px;object-fit:contain;background:#e9e9e6;border-radius:4px;padding:8px;margin-bottom:10px}
+#fit-lab .fit-product-name{font-size:11px;line-height:1.4;flex:1}
+#fit-lab .fit-product-price{font-size:13px;font-weight:800;margin:8px 0}
+#fit-lab .fit-select-label{font-size:10px;letter-spacing:.08em;font-weight:700}
+#fit-lab .fit-summary{list-style:none;padding:0;margin:20px 0 0}
+#fit-lab .fit-summary li{display:flex;justify-content:space-between;gap:12px;font-size:12px;line-height:1.5;padding:9px 0;border-bottom:1px solid var(--line)}
+#fit-lab .fit-summary li span{min-width:0}
+#fit-lab .fit-summary button{display:block;border:0;background:none;color:var(--mut);padding:4px 0;font-size:11px;text-decoration:underline}
+#fit-lab .fit-total{display:flex;justify-content:space-between;gap:12px;font-size:18px;font-weight:800;margin:16px 0}
+#fit-lab .fit-status{min-height:20px;margin:12px 0 0;line-height:1.5}
+#fit-lab .fit-saved-wrap{margin-top:24px}
+#fit-lab .fit-saved{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+#fit-lab .fit-saved-card{border:1px solid var(--line);border-radius:6px;padding:14px;background:var(--card)}
+#fit-lab .fit-saved-images{display:flex;gap:6px;margin-bottom:12px}
+#fit-lab .fit-saved-images img{width:calc((100% - 12px)/3);height:85px;object-fit:contain;background:#e9e9e6;border-radius:4px;padding:5px}
+#fit-lab .fit-saved-card p{font-size:12px;line-height:1.5}
+#fit-lab button:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+@media(max-width:760px){#fit-lab .fit-layout{grid-template-columns:1fr}#fit-lab .fit-panel{padding:16px}}
+@media(max-width:480px){#fit-lab .fit-slot{padding:8px}#fit-lab .fit-slot img{height:90px}#fit-lab .fit-slot[data-slot="bottom"] img{height:110px}#fit-lab .fit-slot[data-slot="layer"] img{height:130px}#fit-lab .fit-placeholder{min-height:90px}}
+@media(max-width:680px){header{flex-wrap:wrap;gap:10px}header nav{order:4;flex-basis:100%;gap:12px}header .logo{margin-right:auto}html{scroll-padding-top:125px}}
+
 </style>
 </head>
 <body>
 <header>
 <span class="logo">MOTUS</span>
 <nav>
-<a href="#top">Home</a><a href="#shop">Catalog</a><a href="#play">Play</a>
+<a href="#top">Home</a><a href="#shop">Catalog</a><a href="#fit-lab">MOTUS FIT LAB</a><a href="#play">Play</a>
 <a href="https://motusapparel-store.myshopify.com/collections/mens">MENS</a>
 <a href="https://motusapparel-store.myshopify.com/collections/womens">WOMENS</a>
 <a href="https://motusapparel-store.myshopify.com/pages/contact">Contact</a>
@@ -75,6 +121,39 @@ footer a{margin:0 8px}
 <input id="q" placeholder="Search products…" style="width:100%;max-width:320px;margin-bottom:16px">
 <div class="grid" id="grid"></div>
 <p><a href="https://motusapparel-store.myshopify.com/collections/all">View all →</a></p>
+</section>
+
+<section id="fit-lab" aria-labelledby="fit-heading">
+<span class="fit-tag">YOUR GEAR. YOUR COMBINATION.</span>
+<h2 id="fit-heading">MOTUS FIT LAB</h2>
+<p class="mut fit-intro">Build a fit for your next move. Mix your favorite tops, bottoms, and layers, or let us shuffle a fresh combination.</p>
+<div class="fit-layout">
+<div class="fit-panel">
+<h3>YOUR FIT</h3>
+<p class="mut">Choose pieces to see them together.</p>
+<div class="fit-board" id="fit-board" aria-label="Outfit preview"></div>
+<div class="fit-actions">
+<button type="button" class="btn" id="fit-shuffle">SHUFFLE MY FIT</button>
+<button type="button" class="btn fit-secondary" id="fit-reset">START OVER</button>
+</div>
+<ul class="fit-summary" id="fit-summary" aria-label="Selected products"></ul>
+<div class="fit-total"><span>OUTFIT TOTAL</span><span id="fit-total">$0.00</span></div>
+<button type="button" class="btn" id="fit-save">SAVE MY FIT</button>
+<p class="mut fit-status" id="fit-status" role="status" aria-live="polite"></p>
+<p class="mut">Favorites are saved in this browser on this device. Prices exclude shipping and tax.</p>
+</div>
+<div class="fit-panel">
+<h3>PICK YOUR PIECES</h3>
+<p class="mut">Choose one item per category. Click a selected item again to remove it.</p>
+<div class="fit-tabs" id="fit-tabs" role="group" aria-label="Clothing category">
+<button type="button" class="pill" data-category="top" aria-pressed="true">TOPS</button>
+<button type="button" class="pill" data-category="bottom" aria-pressed="false">BOTTOMS</button>
+<button type="button" class="pill" data-category="layer" aria-pressed="false">LAYERS</button>
+</div>
+<div class="fit-products" id="fit-products" role="group" aria-label="Tops"></div>
+</div>
+</div>
+<div class="fit-saved-wrap"><h3>SAVED FITS</h3><div class="fit-saved" id="fit-saved"></div></div>
 </section>
 
 <section id="play">
@@ -239,5 +318,56 @@ $("tiers").onclick=function(e){var c=e.target.getAttribute("data-c");if(c){try{n
 render();drawCart();show("react");
 </script>
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"c72087caa714418e9ad7ff9dfa64fb94","r":1,"spa":2}' crossorigin="anonymous"></script>
+<script>
+(function(){
+ 'use strict';
+ var root=document.getElementById('fit-lab');
+ var slots=['top','bottom','layer'], labels={top:'TOP',bottom:'BOTTOM',layer:'LAYER'}, category='top';
+ var selection={top:null,bottom:null,layer:null}, saved=[], storageKey='motusSavedFitsV1';
+ var products=P.map(function(p){return {name:p[0],price:p[1],id:p[2],image:IMG[p[2]],category:/shorts|sweatpants|legging/i.test(p[2])?'bottom':/hood|quarter-zip/i.test(p[2])?'layer':'top'}});
+ var byId={};products.forEach(function(p){byId[p.id]=p});
+ function el(id){return document.getElementById('fit-'+id)}
+ function escape(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+ function money(cents){return '$'+(cents/100).toFixed(2)}
+ function cents(p){return Math.round(p.price*100)}
+ function items(fit){return slots.map(function(k){return byId[fit[k]]}).filter(Boolean)}
+ function total(fit){return items(fit).reduce(function(sum,p){return sum+cents(p)},0)}
+ function normalize(fit){var result={top:null,bottom:null,layer:null};if(!fit||typeof fit!=='object')return result;slots.forEach(function(k){var p=byId[fit[k]];if(p&&p.category===k)result[k]=p.id});return result}
+ function signature(fit){return slots.map(function(k){return fit[k]||''}).join('|')}
+ function status(text){el('status').textContent=text}
+ function image(p){return '<img src="'+escape(p.image)+'" alt="'+escape(p.name)+'">'}
+ try{var stored=JSON.parse(localStorage.getItem(storageKey)||'[]');if(Array.isArray(stored))saved=stored.map(normalize).filter(function(fit){return items(fit).length>0})}catch(e){}
+ function renderProducts(){
+  el('products').setAttribute('aria-label',{top:'Tops',bottom:'Bottoms',layer:'Layers'}[category]);
+  el('products').innerHTML=products.filter(function(p){return p.category===category}).map(function(p){var selected=selection[category]===p.id;return '<button type="button" class="fit-product" data-product="'+escape(p.id)+'" aria-pressed="'+selected+'">'+image(p)+'<span class="fit-product-name">'+escape(p.name)+'</span><span class="fit-product-price">'+money(cents(p))+'</span><span class="fit-select-label">'+(selected?'SELECTED ✓':'ADD TO FIT +')+'</span></button>'}).join('');
+ }
+ function updateProductStates(){el('products').querySelectorAll('[data-product]').forEach(function(button){var selected=selection[category]===button.dataset.product;button.setAttribute('aria-pressed',String(selected));button.querySelector('.fit-select-label').textContent=selected?'SELECTED ✓':'ADD TO FIT +'})}
+ function renderFit(){
+  el('board').innerHTML=slots.map(function(k){var p=byId[selection[k]];return '<div class="fit-slot" data-slot="'+k+'"><small>'+labels[k]+'</small>'+(p?image(p)+'<span class="fit-name">'+escape(p.name)+'</span><button type="button" class="fit-remove" data-remove="'+k+'" aria-label="Remove '+escape(p.name)+'">Remove</button>':'<span class="fit-placeholder">'+(k==='layer'?'Add an optional layer':'Choose a '+labels[k].toLowerCase())+'</span>')+'</div>'}).join('');
+  el('summary').innerHTML=slots.filter(function(k){return selection[k]}).map(function(k){var p=byId[selection[k]];return '<li><span>'+escape(p.name)+'<button type="button" data-remove="'+k+'" aria-label="Remove '+escape(p.name)+' from outfit">Remove</button></span><b>'+money(cents(p))+'</b></li>'}).join('');
+  el('total').textContent=money(total(selection));updateProductStates();
+ }
+ function renderSaved(){el('saved').innerHTML=saved.length?saved.map(function(fit,i){return '<article class="fit-saved-card"><h4 style="margin:0 0 12px">FIT '+(i+1)+'</h4><div class="fit-saved-images">'+items(fit).map(image).join('')+'</div><p>'+items(fit).map(function(p){return escape(p.name)}).join(' · ')+'</p><p><b>'+money(total(fit))+'</b></p><div class="fit-actions"><button type="button" class="pill" data-load="'+i+'" aria-label="Load saved fit '+(i+1)+'">Load fit</button><button type="button" class="pill" data-delete="'+i+'" aria-label="Delete saved fit '+(i+1)+'">Delete</button></div></article>'}).join(''):'<p class="mut">Your favorites will appear here. Build a fit and save it for later.</p>'}
+ el('tabs').addEventListener('click',function(e){var button=e.target.closest('[data-category]');if(!button)return;category=button.dataset.category;el('tabs').querySelectorAll('button').forEach(function(b){b.setAttribute('aria-pressed',String(b===button))});renderProducts()});
+ el('products').addEventListener('click',function(e){var button=e.target.closest('[data-product]');if(!button)return;var p=byId[button.dataset.product];selection[p.category]=selection[p.category]===p.id?null:p.id;renderFit();status(p.name+(selection[p.category]?' added to your fit.':' removed from your fit.'))});
+ root.addEventListener('click',function(e){var button=e.target.closest('[data-remove]');if(!button)return;selection[button.dataset.remove]=null;renderFit();status('Item removed from your fit.')});
+ el('shuffle').addEventListener('click',function(){var previous=signature(selection);slots.forEach(function(k){var pool=products.filter(function(p){return p.category===k});selection[k]=pool[Math.floor(Math.random()*pool.length)].id});if(signature(selection)===previous){var pool=products.filter(function(p){return p.category==='top'&&p.id!==selection.top});if(pool.length)selection.top=pool[Math.floor(Math.random()*pool.length)].id}renderFit();status('Fresh fit ready. Outfit total '+money(total(selection))+'.')});
+ el('reset').addEventListener('click',function(){selection=normalize(null);renderFit();status('Selections cleared. Your saved fits are still here.')});
+ el('save').addEventListener('click',function(){
+  if(!items(selection).length){status('Choose at least one item before saving your fit.');return}
+  if(saved.some(function(fit){return signature(fit)===signature(selection)})){status('This fit is already saved.');return}
+  var next=saved.concat([normalize(selection)]);
+  try{localStorage.setItem(storageKey,JSON.stringify(next))}catch(e){status('This browser could not save your fit. Allow site storage and try again.');return}
+  saved=next;renderSaved();status('Fit saved! Find it in Saved Fits below.');
+ });
+ el('saved').addEventListener('click',function(e){
+  var load=e.target.closest('[data-load]'),remove=e.target.closest('[data-delete]');
+  if(load){selection=normalize(saved[Number(load.dataset.load)]);renderFit();status('Saved fit loaded. Make it yours or shuffle a new one.');el('shuffle').focus();return}
+  if(remove){var index=Number(remove.dataset.delete),next=saved.filter(function(_,i){return i!==index});try{localStorage.setItem(storageKey,JSON.stringify(next))}catch(err){status('This browser could not update your saved fits. Please try again.');return}saved=next;renderSaved();status('Saved fit deleted.');var nextButton=el('saved').querySelector('[data-delete="'+Math.min(index,saved.length-1)+'"]');(nextButton||el('save')).focus()}
+ });
+ renderProducts();renderFit();renderSaved();
+})();
+
+</script>
 </body>
 </html>
